@@ -1,4 +1,5 @@
-package com.example.play_station_system.Role;
+package com.example.play_station_system.Service;
+import com.example.play_station_system.Model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -6,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class RoleService {
 
     @Autowired
-    private roleRepo roleRepo;
+    private com.example.play_station_system.Repo.roleRepo roleRepo;
 
 //    public void addNewRole(String role){
 //        Role role1 = new  Role();

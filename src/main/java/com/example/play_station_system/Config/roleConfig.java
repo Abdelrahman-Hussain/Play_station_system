@@ -1,5 +1,7 @@
-package com.example.play_station_system.Role;
+package com.example.play_station_system.Config;
 
+import com.example.play_station_system.Model.Role;
+import com.example.play_station_system.Repo.roleRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

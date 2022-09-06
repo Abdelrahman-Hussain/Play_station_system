@@ -1,6 +1,5 @@
-package com.example.play_station_system.users;
+package com.example.play_station_system.Model;
 
-import com.example.play_station_system.Role.Role;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,7 +12,7 @@ import static javax.persistence.FetchType.EAGER;
 @Entity
 @Data
 @Table
-public class users implements Serializable {
+public class SiteUser implements Serializable {
 
     @SequenceGenerator(
             name="user_sequence",
@@ -42,7 +41,7 @@ public class users implements Serializable {
                 return true;
         if(obj == null || obj.getClass()!= this.getClass())
             return false;
-        users p = (users) obj;
+        SiteUser p = (SiteUser) obj;
         return (p.id == this.id);
     }
     @Override
@@ -51,7 +50,7 @@ public class users implements Serializable {
         return (int) this.id;
     }
 
-    public users() {
+    public SiteUser() {
         
     }
 
@@ -101,7 +100,7 @@ public class users implements Serializable {
 
 
 
-    public users(long id, String username, String password) {
+    public SiteUser(long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;

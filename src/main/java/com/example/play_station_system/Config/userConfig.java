@@ -1,7 +1,9 @@
-package com.example.play_station_system.users;
+package com.example.play_station_system.Config;
 
-import com.example.play_station_system.Role.Role;
-import com.example.play_station_system.Role.roleRepo;
+import com.example.play_station_system.Model.SiteUser;
+import com.example.play_station_system.Repo.usersRepository;
+import com.example.play_station_system.Model.Role;
+import com.example.play_station_system.Repo.roleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +27,7 @@ public class userConfig   {
     @Bean
     CommandLineRunner commandLineRunner(usersRepository repository){
         return args->{
-            users abdo = new users(
+            SiteUser abdo = new SiteUser(
                     1,
                     "admin@gmail.com",
                     "$2a$10$0iGFreRcDbWAkC6Mf0osjOTGhuEV96QeTFOk68asnYPGuZoR4Sv6q"//123 encripted

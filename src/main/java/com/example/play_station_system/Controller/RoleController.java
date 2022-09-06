@@ -1,5 +1,7 @@
-package com.example.play_station_system.Role;
+package com.example.play_station_system.Controller;
 
+import com.example.play_station_system.Model.Role;
+import com.example.play_station_system.Service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.example.play_station_system.Role;
+package com.example.play_station_system.Model;
 
 import lombok.*;
 

@@ -1,7 +1,8 @@
-package com.example.play_station_system.users;
+package com.example.play_station_system.Service;
 
-import com.example.play_station_system.Role.Role;
-import com.example.play_station_system.Role.roleRepo;
+import com.example.play_station_system.Model.Role;
+import com.example.play_station_system.Repo.roleRepo;
+import com.example.play_station_system.Model.SiteUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,13 +24,13 @@ import java.util.List;
 
 public class userService  implements UserDetailsService {
 
-    private final usersRepository usersRepository;
+    private final com.example.play_station_system.Repo.usersRepository usersRepository;
     private final roleRepo roleRepo;
     private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        users user = usersRepository.findusersByEmail(email);
+        SiteUser user = usersRepository.findusersByEmail(email);
         if(user==null){
             log.error("User not found");
             throw new UsernameNotFoundException("User not found");
@@ -41,14 +42,14 @@ public class userService  implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),authorities);
     }
 
-    public List<users> getUsers(){
+    public List<SiteUser> getUsers(){
         return  usersRepository.findAll();
     }
     public int getUsersCount(){
         return  usersRepository.findAll().size();
     }
 
-    public users addNewUser(users user) {
+    public SiteUser addNewUser(SiteUser user) {
 
             user.setPassword(passwordEncoder.encode(user.getPassword()));
              List<Role> roles = new ArrayList<>();
